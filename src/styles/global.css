@@ -1,0 +1,48 @@
+:root {
+  --fg: #ffffff;
+  --bg: #0f1115;
+  --surface: #151922;
+  --text: #e8eaed;
+  --muted: #8b949e;
+  --accent: #7aa2f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+
+  font-family:
+	"Iosevka",
+	"JetBrains Mono",
+	monospace;
+  line-height: 1.7;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 6rem 2rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
