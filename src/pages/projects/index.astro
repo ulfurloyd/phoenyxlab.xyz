@@ -1,22 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Nav from "../../components/Nav.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+
+projects.sort(
+	(a, b) => a.data.order - b.data.order
+);
 ---
 
 <Layout title="~/projects">
 	<h1>~/projects</h1>
 
-	<h3>phoenyxlab</h3>
-	<p>
-	homelab kubernetes cluster</br>
-	docker is easier but k3s is more fun</br>
-	<a href="https://github.com/ulfurloyd/phoenyxlab">github</a>
-	</p>
+	{
+		projects.map((project) => (
+			<article>
+				<h2>
+					<a href={`/projects/${project.id}`}>
+						{project.data.title}
+					</a>
+				</h2>
 
-	<h3>phoenyx</h3>
-	<p>
-	arch linux dotfiles (cachyos)</br>
-	declarative configuration is the one true religion</br>
-	<a href="https://github.com/ulfurloyd/phoenyx">github</a>
-	</p>
+				<p>{project.data.description}</p>
+			</article>
+		))
+	}
 </Layout>
