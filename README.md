@@ -6,7 +6,7 @@ contains information about my projects, homelab workflow,
 and the tools I use daily.
 
 ## overview
-`phoenyxlab.xyz` is a minimal portfolio website
+[phoenyxlab.xyz](https://phoenyxlab.xyz) is a minimal portfolio website
 with a focus on readibility and simplicity.
 
 it serves as a central place for:
