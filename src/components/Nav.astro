@@ -1,7 +1,40 @@
+---
+const pathname = Astro.url.pathname;
+
+const isProjects =
+	pathname === "/projects" ||
+	pathname.startsWith("/projects/");
+---
+
 <nav>
-	<a href="/">home</a>
-	<a href="/projects">projects</a>
-	<a href="/now">now</a>
-	<a href="/uses">uses</a>
-	<a href="/contact">contact</a>
+	<a
+		href="/"
+		class={pathname === "/" ? "active" : ""}
+	>
+		home
+	</a>
+	<a
+		href="/projects"
+		class={isProjects ? "active" : ""}
+	>
+		projects
+	</a>
+	<a
+		href="/now"
+		class={pathname === "/now" ? "active" : ""}
+	>
+		now
+	</a>
+	<a
+		href="/uses"
+		class={pathname === "/uses" ? "active" : ""}
+	>
+		uses
+	</a>
+	<a
+		href="/contact"
+		class={pathname === "/contact" ? "active" : ""}
+	>
+		contact
+	</a>
 </nav>

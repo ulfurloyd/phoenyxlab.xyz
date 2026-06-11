@@ -4,7 +4,12 @@
   --surface: #151922;
   --text: #e8eaed;
   --muted: #8b949e;
-  --accent: #7aa2f7;
+
+  --accent: #660ea0;
+
+  --accent-bright: #812be2;
+  --accent-soft: #a566d1;
+  --accent-muted: #4d0b79;
 }
 
 * {
@@ -31,18 +36,20 @@ main {
   max-width: 700px;
 }
 
-h1,
-h2,
-h3 {
-  font-weight: normal;
+h2 {
+	color: var(--accent-soft);
 }
 
+h1,
+h3 {
+	font-weight: normal;
+}
 a {
   color: inherit;
 }
 
 a:hover {
-	color: var(--accent);
+	color: var(--accent-soft);
 	opacity: 0.6;
 }
 
@@ -84,9 +91,14 @@ nav a::before {
 	opacity: 0.5;
 }
 
-/* nav a.active { */
-/* 	color: var(--accent); */
-/* } */
+nav a.active {
+	color: var(--accent-bright);
+}
+
+::selection {
+	background: var(--accent);
+	color: var(--fg);
+}
 
 @media (max-width:768px) {
 	.layout {
